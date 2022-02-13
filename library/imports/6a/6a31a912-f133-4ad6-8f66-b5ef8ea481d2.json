@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "",
+    "_name": "ball_4",
     "_objFlags": 0,
     "_native": "",
     "data": {
@@ -188,7 +188,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "47d07023-fba5-43b0-8653-49bbc57012b5"
+      "__uuid__": "6a31a912-f133-4ad6-8f66-b5ef8ea481d2"
     },
     "fileId": "f4T+eZ5nlDzbd+xmKBGjXX",
     "sync": false
@@ -291,7 +291,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "47d07023-fba5-43b0-8653-49bbc57012b5"
+      "__uuid__": "6a31a912-f133-4ad6-8f66-b5ef8ea481d2"
     },
     "fileId": "93GpY9qhdFnaH8K4ZCOOPG",
     "sync": false

@@ -10,13 +10,47 @@ export default class Game extends cc.Component {
     @property
     text: string = 'hello';
 
+    @property(cc.Prefab)
+    uiBall_2:cc.Prefab = null 
+
+    @property(cc.Prefab)
+    uiBall_4:cc.Prefab = null
+
+
+    ballMap:Array<cc.Prefab>  = new Array();
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
         this.initPhysicsDebug()
+        this.addClickEvent()
+        this.ballMap[0] = this.uiBall_2;
+        this.ballMap[1] = this.uiBall_4;
+    }
+
+    addClickEvent(){
+        this.node.on(cc.Node.EventType.TOUCH_END,this.genBall.bind(this))
+    }
+    
+    genBall(e:cc.Event.EventTouch){
+
+        var ballNumber:number  = this.random(0,1)
+        var ballpre = cc.instantiate(this.ballMap[ballNumber])
+        this.node.addChild(ballpre)
+        console.log(e.getLocationX(),e.getLocationY())
+        var nodeSpace = this.node.convertToNodeSpaceAR(e.getLocation())
+        ballpre.x = nodeSpace.x
+        ballpre.y = nodeSpace.y
+        
     }
 
     start () {
+
+    }
+
+    random(lower, upper) {
+
+        return Math.floor(Math.random() * (upper - lower)) + lower;
+        
     }
 
     initPhysicsDebug():void{
